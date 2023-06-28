@@ -9,16 +9,16 @@ import (
 
 	"github.com/upbound/upjet/pkg/controller"
 
-	resource "github.com/dcoppa/provider-proxmox/internal/controller/null/resource"
 	providerconfig "github.com/dcoppa/provider-proxmox/internal/controller/providerconfig"
+	qemu "github.com/dcoppa/provider-proxmox/internal/controller/vm/qemu"
 )
 
 // Setup creates all controllers with the supplied logger and adds them to
 // the supplied manager.
 func Setup(mgr ctrl.Manager, o controller.Options) error {
 	for _, setup := range []func(ctrl.Manager, controller.Options) error{
-		resource.Setup,
 		providerconfig.Setup,
+		qemu.Setup,
 	} {
 		if err := setup(mgr, o); err != nil {
 			return err
