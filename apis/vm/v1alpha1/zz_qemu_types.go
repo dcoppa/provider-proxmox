@@ -786,7 +786,6 @@ type QemuStatus struct {
 type Qemu struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty"`
-	// +kubebuilder:validation:XValidation:rule="self.managementPolicy == 'ObserveOnly' || has(self.forProvider.targetNode)",message="targetNode is a required parameter"
 	Spec   QemuSpec   `json:"spec"`
 	Status QemuStatus `json:"status,omitempty"`
 }

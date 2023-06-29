@@ -606,6 +606,8 @@ spec:
             x-kubernetes-validations:
             - message: targetNode is a required parameter
               rule: self.managementPolicy == 'ObserveOnly' || has(self.forProvider.targetNode)
+            - message: vmid is a required parameter
+              rule: self.managementPolicy == 'ObserveOnly' || has(self.forProvider.vmid)
           status:
             description: QemuStatus defines the observed state of Qemu.
             properties:
