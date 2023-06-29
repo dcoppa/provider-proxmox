@@ -29,6 +29,8 @@ const (
 	keyTlsInsecure          = "pm_tls_insecure"
 	keyUser                 = "pm_user"
 	keyPassword             = "pm_password"
+	keyApiTokenId           = "pm_api_token_id"
+	keyApiTokenSecret       = "pm_api_token_secret"
 )
 
 // TerraformSetupBuilder builds Terraform a terraform.SetupFn function which
@@ -79,6 +81,12 @@ func TerraformSetupBuilder(version, providerSource, providerVersion string) terr
 		}
 		if v, ok := creds[keyPassword]; ok {
 			ps.Configuration[keyPassword] = v
+		}
+		if v, ok := creds[keyApiTokenId]; ok {
+			ps.Configuration[keyApiTokenId] = v
+		}
+		if v, ok := creds[keyApiTokenSecret]; ok {
+			ps.Configuration[keyApiTokenSecret] = v
 		}
 		return ps, nil
 	}
