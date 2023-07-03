@@ -10,6 +10,3 @@ spec:
   forProvider:
     iso: ISO file name
     targetNode: Node to create the VM on
-
----
-
