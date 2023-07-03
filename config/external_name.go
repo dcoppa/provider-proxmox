@@ -15,6 +15,12 @@ import (
 
 func qemuVMConf() config.ExternalName {
 	e := config.NameAsIdentifier
+	e.GetExternalNameFn = func(tfstate map[string]any) (string, error) {
+		if name, ok := tfstate["name"].(string); ok && name != "" {
+			return name, nil
+		}
+		return "", errors.New("cannot find name in tfstate")
+	}
 	e.GetIDFn = func(_ context.Context, _ string, parameters map[string]interface{}, _ map[string]interface{}) (string, error) {
 		targetNode, ok := parameters["target_node"]
 		if !ok {
