@@ -4,7 +4,7 @@
 PROJECT_NAME ?= provider-proxmox
 PROJECT_REPO ?= github.com/dcoppa/$(PROJECT_NAME)
 
-export TERRAFORM_VERSION ?= 1.3.3
+export TERRAFORM_VERSION ?= 1.3.9
 
 export TERRAFORM_PROVIDER_SOURCE ?= telmate/proxmox
 export TERRAFORM_PROVIDER_REPO ?= https://github.com/telmate/terraform-provider-proxmox
