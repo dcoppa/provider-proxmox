@@ -60,13 +60,9 @@ resources:
             additional_wait: '- (do not use, api should manage timeouts)'
             agent = 0: ) unless the installed OS contains the Agent in OS install configurations
             boot: ': a valid boot order must be specified with Network type included (eg order=net0;scsi0)'
-            bridge: '- (Optional; use network.bridge instead)'
             clone_wait: '- (do not use, api should manage timeouts)'
             disk_gb: '- (Optional; use disk.size instead)'
-            mac: '- (Optional; use network.macaddr instead)'
-            nic: '- (Optional; use network instead)'
             preprovision: '- (do not use, provider do not fully support preprovisioning anymore)'
             storage: '- (Optional; use disk.storage instead)'
             storage_type: '- (Optional; use disk.type instead)'
-            vlan: '- (Optional; use network.tag instead)'
         importStatements: []

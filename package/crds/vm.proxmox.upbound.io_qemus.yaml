@@ -95,8 +95,6 @@ spec:
                     type: string
                   bootdisk:
                     type: string
-                  bridge:
-                    type: string
                   ciWait:
                     type: number
                   cicustom:
@@ -271,8 +269,6 @@ spec:
                     type: string
                   kvm:
                     type: boolean
-                  mac:
-                    type: string
                   machine:
                     description: Specifies the Qemu machine type.
                     type: string
@@ -306,8 +302,6 @@ spec:
                       - model
                       type: object
                     type: array
-                  nic:
-                    type: string
                   numa:
                     type: boolean
                   onboot:
@@ -411,8 +405,6 @@ spec:
                           type: string
                       type: object
                     type: array
-                  vlan:
-                    type: number
                   vmid:
                     description: The VM identifier in proxmox (100-999999999)
                     type: number
@@ -640,8 +632,6 @@ spec:
                     type: string
                   bootdisk:
                     type: string
-                  bridge:
-                    type: string
                   ciWait:
                     type: number
                   cicustom:
@@ -801,8 +791,6 @@ spec:
                     type: string
                   kvm:
                     type: boolean
-                  mac:
-                    type: string
                   machine:
                     description: Specifies the Qemu machine type.
                     type: string
@@ -834,8 +822,6 @@ spec:
                           type: number
                       type: object
                     type: array
-                  nic:
-                    type: string
                   numa:
                     type: boolean
                   onboot:
@@ -937,8 +923,6 @@ spec:
                           type: string
                       type: object
                     type: array
-                  vlan:
-                    type: number
                   vmid:
                     description: The VM identifier in proxmox (100-999999999)
                     type: number

@@ -262,8 +262,6 @@ type QemuObservation struct {
 
 	Bootdisk *string `json:"bootdisk,omitempty" tf:"bootdisk,omitempty"`
 
-	Bridge *string `json:"bridge,omitempty" tf:"bridge,omitempty"`
-
 	CPU *string `json:"cpu,omitempty" tf:"cpu,omitempty"`
 
 	CiWait *float64 `json:"ciWait,omitempty" tf:"ci_wait,omitempty"`
@@ -349,8 +347,6 @@ type QemuObservation struct {
 
 	Kvm *bool `json:"kvm,omitempty" tf:"kvm,omitempty"`
 
-	Mac *string `json:"mac,omitempty" tf:"mac,omitempty"`
-
 	// Specifies the Qemu machine type.
 	Machine *string `json:"machine,omitempty" tf:"machine,omitempty"`
 
@@ -359,8 +355,6 @@ type QemuObservation struct {
 	Nameserver *string `json:"nameserver,omitempty" tf:"nameserver,omitempty"`
 
 	Network []NetworkObservation `json:"network,omitempty" tf:"network,omitempty"`
-
-	Nic *string `json:"nic,omitempty" tf:"nic,omitempty"`
 
 	Numa *bool `json:"numa,omitempty" tf:"numa,omitempty"`
 
@@ -430,8 +424,6 @@ type QemuObservation struct {
 
 	Vga []VgaObservation `json:"vga,omitempty" tf:"vga,omitempty"`
 
-	Vlan *float64 `json:"vlan,omitempty" tf:"vlan,omitempty"`
-
 	// The VM identifier in proxmox (100-999999999)
 	Vmid *float64 `json:"vmid,omitempty" tf:"vmid,omitempty"`
 }
@@ -468,9 +460,6 @@ type QemuParameters struct {
 
 	// +kubebuilder:validation:Optional
 	Bootdisk *string `json:"bootdisk,omitempty" tf:"bootdisk,omitempty"`
-
-	// +kubebuilder:validation:Optional
-	Bridge *string `json:"bridge,omitempty" tf:"bridge,omitempty"`
 
 	// +kubebuilder:validation:Optional
 	CPU *string `json:"cpu,omitempty" tf:"cpu,omitempty"`
@@ -593,9 +582,6 @@ type QemuParameters struct {
 	// +kubebuilder:validation:Optional
 	Kvm *bool `json:"kvm,omitempty" tf:"kvm,omitempty"`
 
-	// +kubebuilder:validation:Optional
-	Mac *string `json:"mac,omitempty" tf:"mac,omitempty"`
-
 	// Specifies the Qemu machine type.
 	// +kubebuilder:validation:Optional
 	Machine *string `json:"machine,omitempty" tf:"machine,omitempty"`
@@ -608,9 +594,6 @@ type QemuParameters struct {
 
 	// +kubebuilder:validation:Optional
 	Network []NetworkParameters `json:"network,omitempty" tf:"network,omitempty"`
-
-	// +kubebuilder:validation:Optional
-	Nic *string `json:"nic,omitempty" tf:"nic,omitempty"`
 
 	// +kubebuilder:validation:Optional
 	Numa *bool `json:"numa,omitempty" tf:"numa,omitempty"`
@@ -697,9 +680,6 @@ type QemuParameters struct {
 
 	// +kubebuilder:validation:Optional
 	Vga []VgaParameters `json:"vga,omitempty" tf:"vga,omitempty"`
-
-	// +kubebuilder:validation:Optional
-	Vlan *float64 `json:"vlan,omitempty" tf:"vlan,omitempty"`
 
 	// The VM identifier in proxmox (100-999999999)
 	// +kubebuilder:validation:Optional
