@@ -621,11 +621,6 @@ func (in *QemuObservation) DeepCopyInto(out *QemuObservation) {
 		*out = new(string)
 		**out = **in
 	}
-	if in.Bridge != nil {
-		in, out := &in.Bridge, &out.Bridge
-		*out = new(string)
-		**out = **in
-	}
 	if in.CPU != nil {
 		in, out := &in.CPU, &out.CPU
 		*out = new(string)
@@ -830,11 +825,6 @@ func (in *QemuObservation) DeepCopyInto(out *QemuObservation) {
 		*out = new(bool)
 		**out = **in
 	}
-	if in.Mac != nil {
-		in, out := &in.Mac, &out.Mac
-		*out = new(string)
-		**out = **in
-	}
 	if in.Machine != nil {
 		in, out := &in.Machine, &out.Machine
 		*out = new(string)
@@ -856,11 +846,6 @@ func (in *QemuObservation) DeepCopyInto(out *QemuObservation) {
 		for i := range *in {
 			(*in)[i].DeepCopyInto(&(*out)[i])
 		}
-	}
-	if in.Nic != nil {
-		in, out := &in.Nic, &out.Nic
-		*out = new(string)
-		**out = **in
 	}
 	if in.Numa != nil {
 		in, out := &in.Numa, &out.Numa
@@ -1015,11 +1000,6 @@ func (in *QemuObservation) DeepCopyInto(out *QemuObservation) {
 			(*in)[i].DeepCopyInto(&(*out)[i])
 		}
 	}
-	if in.Vlan != nil {
-		in, out := &in.Vlan, &out.Vlan
-		*out = new(float64)
-		**out = **in
-	}
 	if in.Vmid != nil {
 		in, out := &in.Vmid, &out.Vmid
 		*out = new(float64)
@@ -1077,11 +1057,6 @@ func (in *QemuParameters) DeepCopyInto(out *QemuParameters) {
 	}
 	if in.Bootdisk != nil {
 		in, out := &in.Bootdisk, &out.Bootdisk
-		*out = new(string)
-		**out = **in
-	}
-	if in.Bridge != nil {
-		in, out := &in.Bridge, &out.Bridge
 		*out = new(string)
 		**out = **in
 	}
@@ -1284,11 +1259,6 @@ func (in *QemuParameters) DeepCopyInto(out *QemuParameters) {
 		*out = new(bool)
 		**out = **in
 	}
-	if in.Mac != nil {
-		in, out := &in.Mac, &out.Mac
-		*out = new(string)
-		**out = **in
-	}
 	if in.Machine != nil {
 		in, out := &in.Machine, &out.Machine
 		*out = new(string)
@@ -1310,11 +1280,6 @@ func (in *QemuParameters) DeepCopyInto(out *QemuParameters) {
 		for i := range *in {
 			(*in)[i].DeepCopyInto(&(*out)[i])
 		}
-	}
-	if in.Nic != nil {
-		in, out := &in.Nic, &out.Nic
-		*out = new(string)
-		**out = **in
 	}
 	if in.Numa != nil {
 		in, out := &in.Numa, &out.Numa
@@ -1451,11 +1416,6 @@ func (in *QemuParameters) DeepCopyInto(out *QemuParameters) {
 		for i := range *in {
 			(*in)[i].DeepCopyInto(&(*out)[i])
 		}
-	}
-	if in.Vlan != nil {
-		in, out := &in.Vlan, &out.Vlan
-		*out = new(float64)
-		**out = **in
 	}
 	if in.Vmid != nil {
 		in, out := &in.Vmid, &out.Vmid
