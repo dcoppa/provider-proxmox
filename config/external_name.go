@@ -4,13 +4,36 @@ Copyright 2022 Upbound Inc.
 
 package config
 
-import "github.com/upbound/upjet/pkg/config"
+import (
+	"context"
+	"fmt"
+
+	"github.com/pkg/errors"
+
+	"github.com/upbound/upjet/pkg/config"
+)
+
+func qemuVMConf() config.ExternalName {
+	e := config.NameAsIdentifier
+	e.GetIDFn = func(_ context.Context, _ string, parameters map[string]interface{}, _ map[string]interface{}) (string, error) {
+		targetNode, ok := parameters["target_node"]
+		if !ok {
+			return "", errors.New("cannot get target_node")
+		}
+		vmId, ok := parameters["vmid"]
+		if !ok {
+			return "", errors.New("cannot get vmid")
+		}
+		return fmt.Sprintf("%s/qemu/%.0f", targetNode, vmId), nil
+	}
+	return e
+}
 
 // ExternalNameConfigs contains all external name configurations for this
 // provider.
 var ExternalNameConfigs = map[string]config.ExternalName{
 	// Import requires using a randomly generated ID from provider: nl-2e21sda
-	"proxmox_vm_qemu": config.NameAsIdentifier,
+	"proxmox_vm_qemu": qemuVMConf(),
 }
 
 // ExternalNameConfigurations applies all external name configs listed in the
