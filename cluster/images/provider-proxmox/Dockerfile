@@ -27,7 +27,7 @@ ENV TF_FORK 0
 RUN mkdir -p ${PLUGIN_DIR}
 
 ADD https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_${TARGETOS}_${TARGETARCH}.zip /tmp
-ADD ${TERRAFORM_PROVIDER_DOWNLOAD_URL_PREFIX}/${TERRAFORM_PROVIDER_DOWNLOAD_NAME}_${TERRAFORM_PROVIDER_VERSION}_${TARGETOS}_${TARGETARCH}.zip /tmp
+ADD bin/${TARGETOS}_${TARGETARCH}/${TERRAFORM_PROVIDER_DOWNLOAD_NAME}_${TERRAFORM_PROVIDER_VERSION}_${TARGETOS}_${TARGETARCH}.zip /tmp
 ADD terraformrc.hcl ${TF_CLI_CONFIG_FILE}
 
 RUN unzip /tmp/terraform_${TERRAFORM_VERSION}_${TARGETOS}_${TARGETARCH}.zip -d /usr/local/bin \
@@ -38,10 +38,6 @@ RUN unzip /tmp/terraform_${TERRAFORM_VERSION}_${TARGETOS}_${TARGETARCH}.zip -d /
   && rm /tmp/${TERRAFORM_PROVIDER_DOWNLOAD_NAME}_${TERRAFORM_PROVIDER_VERSION}_${TARGETOS}_${TARGETARCH}.zip \
   && chown -R ${USER_ID}:${USER_ID} /terraform
 # End of - Setup Terraform environment
-
-RUN rm -f /terraform/provider-mirror/registry.terraform.io/telmate/proxmox/2.9.14/linux_amd64/terraform-provider-proxmox_v2.9.14
-ADD "bin/${TARGETOS}_${TARGETARCH}/terraform-provider-proxmox" /terraform/provider-mirror/registry.terraform.io/telmate/proxmox/2.9.14/linux_amd64/terraform-provider-proxmox_v2.9.14
-RUN chmod 0755 /terraform/provider-mirror/registry.terraform.io/telmate/proxmox/2.9.14/linux_amd64/terraform-provider-proxmox_v2.9.14
 
 # Provider controller needs these environment variable at runtime
 ENV TERRAFORM_VERSION ${TERRAFORM_VERSION}
