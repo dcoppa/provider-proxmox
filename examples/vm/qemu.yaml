@@ -28,7 +28,6 @@ spec:
     onboot: true
     oncreate: true
     osType: cloud-init
-    preprovision: true
     qemuOs: other
     scsihw: virtio-scsi-pci
     sockets: 1

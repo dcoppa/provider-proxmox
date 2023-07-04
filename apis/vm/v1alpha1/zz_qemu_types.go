@@ -291,15 +291,11 @@ type QemuObservation struct {
 
 	Disk []DiskObservation `json:"disk,omitempty" tf:"disk,omitempty"`
 
-	DiskGb *float64 `json:"diskGb,omitempty" tf:"disk_gb,omitempty"`
-
 	ForceCreate *bool `json:"forceCreate,omitempty" tf:"force_create,omitempty"`
 
 	ForceRecreateOnChangeOf *string `json:"forceRecreateOnChangeOf,omitempty" tf:"force_recreate_on_change_of,omitempty"`
 
 	FullClone *bool `json:"fullClone,omitempty" tf:"full_clone,omitempty"`
-
-	GuestAgentReadyTimeout *float64 `json:"guestAgentReadyTimeout,omitempty" tf:"guest_agent_ready_timeout,omitempty"`
 
 	Hagroup *string `json:"hagroup,omitempty" tf:"hagroup,omitempty"`
 
@@ -371,9 +367,6 @@ type QemuObservation struct {
 
 	Pool *string `json:"pool,omitempty" tf:"pool,omitempty"`
 
-	// (do not use, provider do not fully support preprovisioning anymore)
-	Preprovision *bool `json:"preprovision,omitempty" tf:"preprovision,omitempty"`
-
 	Pxe *bool `json:"pxe,omitempty" tf:"pxe,omitempty"`
 
 	QemuOs *string `json:"qemuOs,omitempty" tf:"qemu_os,omitempty"`
@@ -402,10 +395,6 @@ type QemuObservation struct {
 
 	// Startup order of the VM
 	Startup *string `json:"startup,omitempty" tf:"startup,omitempty"`
-
-	Storage *string `json:"storage,omitempty" tf:"storage,omitempty"`
-
-	StorageType *string `json:"storageType,omitempty" tf:"storage_type,omitempty"`
 
 	// Enable tablet mode in the VM
 	Tablet *bool `json:"tablet,omitempty" tf:"tablet,omitempty"`
@@ -502,9 +491,6 @@ type QemuParameters struct {
 	Disk []DiskParameters `json:"disk,omitempty" tf:"disk,omitempty"`
 
 	// +kubebuilder:validation:Optional
-	DiskGb *float64 `json:"diskGb,omitempty" tf:"disk_gb,omitempty"`
-
-	// +kubebuilder:validation:Optional
 	ForceCreate *bool `json:"forceCreate,omitempty" tf:"force_create,omitempty"`
 
 	// +kubebuilder:validation:Optional
@@ -512,9 +498,6 @@ type QemuParameters struct {
 
 	// +kubebuilder:validation:Optional
 	FullClone *bool `json:"fullClone,omitempty" tf:"full_clone,omitempty"`
-
-	// +kubebuilder:validation:Optional
-	GuestAgentReadyTimeout *float64 `json:"guestAgentReadyTimeout,omitempty" tf:"guest_agent_ready_timeout,omitempty"`
 
 	// +kubebuilder:validation:Optional
 	Hagroup *string `json:"hagroup,omitempty" tf:"hagroup,omitempty"`
@@ -616,10 +599,6 @@ type QemuParameters struct {
 	// +kubebuilder:validation:Optional
 	Pool *string `json:"pool,omitempty" tf:"pool,omitempty"`
 
-	// (do not use, provider do not fully support preprovisioning anymore)
-	// +kubebuilder:validation:Optional
-	Preprovision *bool `json:"preprovision,omitempty" tf:"preprovision,omitempty"`
-
 	// +kubebuilder:validation:Optional
 	Pxe *bool `json:"pxe,omitempty" tf:"pxe,omitempty"`
 
@@ -654,12 +633,6 @@ type QemuParameters struct {
 	// Startup order of the VM
 	// +kubebuilder:validation:Optional
 	Startup *string `json:"startup,omitempty" tf:"startup,omitempty"`
-
-	// +kubebuilder:validation:Optional
-	Storage *string `json:"storage,omitempty" tf:"storage,omitempty"`
-
-	// +kubebuilder:validation:Optional
-	StorageType *string `json:"storageType,omitempty" tf:"storage_type,omitempty"`
 
 	// Enable tablet mode in the VM
 	// +kubebuilder:validation:Optional

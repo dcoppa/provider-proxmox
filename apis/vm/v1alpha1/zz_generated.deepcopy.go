@@ -683,11 +683,6 @@ func (in *QemuObservation) DeepCopyInto(out *QemuObservation) {
 			(*in)[i].DeepCopyInto(&(*out)[i])
 		}
 	}
-	if in.DiskGb != nil {
-		in, out := &in.DiskGb, &out.DiskGb
-		*out = new(float64)
-		**out = **in
-	}
 	if in.ForceCreate != nil {
 		in, out := &in.ForceCreate, &out.ForceCreate
 		*out = new(bool)
@@ -701,11 +696,6 @@ func (in *QemuObservation) DeepCopyInto(out *QemuObservation) {
 	if in.FullClone != nil {
 		in, out := &in.FullClone, &out.FullClone
 		*out = new(bool)
-		**out = **in
-	}
-	if in.GuestAgentReadyTimeout != nil {
-		in, out := &in.GuestAgentReadyTimeout, &out.GuestAgentReadyTimeout
-		*out = new(float64)
 		**out = **in
 	}
 	if in.Hagroup != nil {
@@ -877,11 +867,6 @@ func (in *QemuObservation) DeepCopyInto(out *QemuObservation) {
 		*out = new(string)
 		**out = **in
 	}
-	if in.Preprovision != nil {
-		in, out := &in.Preprovision, &out.Preprovision
-		*out = new(bool)
-		**out = **in
-	}
 	if in.Pxe != nil {
 		in, out := &in.Pxe, &out.Pxe
 		*out = new(bool)
@@ -946,16 +931,6 @@ func (in *QemuObservation) DeepCopyInto(out *QemuObservation) {
 	}
 	if in.Startup != nil {
 		in, out := &in.Startup, &out.Startup
-		*out = new(string)
-		**out = **in
-	}
-	if in.Storage != nil {
-		in, out := &in.Storage, &out.Storage
-		*out = new(string)
-		**out = **in
-	}
-	if in.StorageType != nil {
-		in, out := &in.StorageType, &out.StorageType
 		*out = new(string)
 		**out = **in
 	}
@@ -1122,11 +1097,6 @@ func (in *QemuParameters) DeepCopyInto(out *QemuParameters) {
 			(*in)[i].DeepCopyInto(&(*out)[i])
 		}
 	}
-	if in.DiskGb != nil {
-		in, out := &in.DiskGb, &out.DiskGb
-		*out = new(float64)
-		**out = **in
-	}
 	if in.ForceCreate != nil {
 		in, out := &in.ForceCreate, &out.ForceCreate
 		*out = new(bool)
@@ -1140,11 +1110,6 @@ func (in *QemuParameters) DeepCopyInto(out *QemuParameters) {
 	if in.FullClone != nil {
 		in, out := &in.FullClone, &out.FullClone
 		*out = new(bool)
-		**out = **in
-	}
-	if in.GuestAgentReadyTimeout != nil {
-		in, out := &in.GuestAgentReadyTimeout, &out.GuestAgentReadyTimeout
-		*out = new(float64)
 		**out = **in
 	}
 	if in.Hagroup != nil {
@@ -1311,11 +1276,6 @@ func (in *QemuParameters) DeepCopyInto(out *QemuParameters) {
 		*out = new(string)
 		**out = **in
 	}
-	if in.Preprovision != nil {
-		in, out := &in.Preprovision, &out.Preprovision
-		*out = new(bool)
-		**out = **in
-	}
 	if in.Pxe != nil {
 		in, out := &in.Pxe, &out.Pxe
 		*out = new(bool)
@@ -1370,16 +1330,6 @@ func (in *QemuParameters) DeepCopyInto(out *QemuParameters) {
 	}
 	if in.Startup != nil {
 		in, out := &in.Startup, &out.Startup
-		*out = new(string)
-		**out = **in
-	}
-	if in.Storage != nil {
-		in, out := &in.Storage, &out.Storage
-		*out = new(string)
-		**out = **in
-	}
-	if in.StorageType != nil {
-		in, out := &in.StorageType, &out.StorageType
 		*out = new(string)
 		**out = **in
 	}

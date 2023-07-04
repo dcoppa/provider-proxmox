@@ -206,16 +206,12 @@ spec:
                       - type
                       type: object
                     type: array
-                  diskGb:
-                    type: number
                   forceCreate:
                     type: boolean
                   forceRecreateOnChangeOf:
                     type: string
                   fullClone:
                     type: boolean
-                  guestAgentReadyTimeout:
-                    type: number
                   hagroup:
                     type: string
                   hastate:
@@ -317,10 +313,6 @@ spec:
                     type: string
                   pool:
                     type: string
-                  preprovision:
-                    description: (do not use, provider do not fully support preprovisioning
-                      anymore)
-                    type: boolean
                   pxe:
                     type: boolean
                   qemuOs:
@@ -370,10 +362,6 @@ spec:
                     type: string
                   startup:
                     description: Startup order of the VM
-                    type: string
-                  storage:
-                    type: string
-                  storageType:
                     type: string
                   tablet:
                     description: Enable tablet mode in the VM
@@ -726,16 +714,12 @@ spec:
                           type: string
                       type: object
                     type: array
-                  diskGb:
-                    type: number
                   forceCreate:
                     type: boolean
                   forceRecreateOnChangeOf:
                     type: string
                   fullClone:
                     type: boolean
-                  guestAgentReadyTimeout:
-                    type: number
                   hagroup:
                     type: string
                   hastate:
@@ -837,10 +821,6 @@ spec:
                     type: string
                   pool:
                     type: string
-                  preprovision:
-                    description: (do not use, provider do not fully support preprovisioning
-                      anymore)
-                    type: boolean
                   pxe:
                     type: boolean
                   qemuOs:
@@ -877,10 +857,6 @@ spec:
                     type: string
                   startup:
                     description: Startup order of the VM
-                    type: string
-                  storage:
-                    type: string
-                  storageType:
                     type: string
                   tablet:
                     description: Enable tablet mode in the VM

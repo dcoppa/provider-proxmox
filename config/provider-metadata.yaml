@@ -13,31 +13,6 @@ resources:
                   "name": "VM-name",
                   "target_node": "Node to create the VM on"
                 }
-            - name: preprovision-test
-              manifest: |-
-                {
-                  "os_type": "ubuntu",
-                  "preprovision": true
-                }
-            - name: preprovision-test
-              manifest: |-
-                {
-                  "connection": [
-                    {
-                      "host": "${self.ssh_host}",
-                      "port": "${self.ssh_port}",
-                      "private_key": "${self.ssh_private_key}",
-                      "type": "ssh",
-                      "user": "${self.ssh_user}"
-                    }
-                  ],
-                  "os_network_config": "auto eth0\niface eth0 inet dhcp\n",
-                  "os_type": "ubuntu",
-                  "preprovision": true,
-                  "ssh_forward_ip": "10.0.0.1",
-                  "ssh_private_key": "-----BEGIN RSA PRIVATE KEY-----\nprivate ssh key terraform\n-----END RSA PRIVATE KEY-----\n",
-                  "ssh_user": "terraform"
-                }
             - name: resource-name
               manifest: |-
                 {
@@ -61,8 +36,4 @@ resources:
             agent = 0: ) unless the installed OS contains the Agent in OS install configurations
             boot: ': a valid boot order must be specified with Network type included (eg order=net0;scsi0)'
             clone_wait: '- (do not use, api should manage timeouts)'
-            disk_gb: '- (Optional; use disk.size instead)'
-            preprovision: '- (do not use, provider do not fully support preprovisioning anymore)'
-            storage: '- (Optional; use disk.storage instead)'
-            storage_type: '- (Optional; use disk.type instead)'
         importStatements: []
