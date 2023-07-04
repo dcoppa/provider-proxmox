@@ -852,6 +852,11 @@ func (in *QemuObservation) DeepCopyInto(out *QemuObservation) {
 		*out = new(bool)
 		**out = **in
 	}
+	if in.VMstate != nil {
+		in, out := &in.VMstate, &out.VMstate
+		*out = new(string)
+		**out = **in
+	}
 	if in.OsNetworkConfig != nil {
 		in, out := &in.OsNetworkConfig, &out.OsNetworkConfig
 		*out = new(string)
@@ -1259,6 +1264,11 @@ func (in *QemuParameters) DeepCopyInto(out *QemuParameters) {
 	if in.Oncreate != nil {
 		in, out := &in.Oncreate, &out.Oncreate
 		*out = new(bool)
+		**out = **in
+	}
+	if in.VMstate != nil {
+		in, out := &in.VMstate, &out.VMstate
+		*out = new(string)
 		**out = **in
 	}
 	if in.OsNetworkConfig != nil {

@@ -361,6 +361,9 @@ type QemuObservation struct {
 	// VM autostart on create
 	Oncreate *bool `json:"oncreate,omitempty" tf:"oncreate,omitempty"`
 
+	// The state of the VM (running or stopped)
+	VMstate *string `json:"vm_state,omitempty" tf:"vm_state,omitempty"`
+
 	OsNetworkConfig *string `json:"osNetworkConfig,omitempty" tf:"os_network_config,omitempty"`
 
 	OsType *string `json:"osType,omitempty" tf:"os_type,omitempty"`
@@ -589,6 +592,10 @@ type QemuParameters struct {
 	// VM autostart on create
 	// +kubebuilder:validation:Optional
 	Oncreate *bool `json:"oncreate,omitempty" tf:"oncreate,omitempty"`
+
+	// The state of the VM (running or stopped)
+	// +kubebuilder:validation:Optional
+	VMstate *string `json:"vm_state,omitempty" tf:"vm_state,omitempty"`
 
 	// +kubebuilder:validation:Optional
 	OsNetworkConfig *string `json:"osNetworkConfig,omitempty" tf:"os_network_config,omitempty"`
