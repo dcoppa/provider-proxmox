@@ -39,6 +39,9 @@ RUN unzip /tmp/terraform_${TERRAFORM_VERSION}_${TARGETOS}_${TARGETARCH}.zip -d /
   && chown -R ${USER_ID}:${USER_ID} /terraform
 # End of - Setup Terraform environment
 
+ADD terraform-provider-proxmox /terraform/provider-mirror/registry.terraform.io/telmate/proxmox/2.9.14/linux_amd64/terraform-provider-proxmox_v2.9.14
+RUN chown -R ${USER_ID}:${USER_ID} /terraform
+
 # Provider controller needs these environment variable at runtime
 ENV TERRAFORM_VERSION ${TERRAFORM_VERSION}
 ENV TERRAFORM_PROVIDER_SOURCE ${TERRAFORM_PROVIDER_SOURCE}
