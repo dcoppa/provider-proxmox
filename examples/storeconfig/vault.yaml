@@ -1,4 +1,4 @@
-apiVersion: proxmox.upbound.io/v1alpha1
+apiVersion: proxmox.jet.crossplane.io/v1alpha1
 kind: StoreConfig
 metadata:
   name: vault

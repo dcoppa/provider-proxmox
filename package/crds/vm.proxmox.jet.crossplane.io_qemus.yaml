@@ -5,9 +5,9 @@ metadata:
   annotations:
     controller-gen.kubebuilder.io/version: v0.11.3
   creationTimestamp: null
-  name: qemus.vm.proxmox.upbound.io
+  name: qemus.vm.proxmox.jet.crossplane.io
 spec:
-  group: vm.proxmox.upbound.io
+  group: vm.proxmox.jet.crossplane.io
   names:
     categories:
     - crossplane

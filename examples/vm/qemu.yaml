@@ -1,4 +1,4 @@
-apiVersion: vm.proxmox.upbound.io/v1alpha1
+apiVersion: vm.proxmox.jet.crossplane.io/v1alpha1
 kind: Qemu
 metadata:
   name: test-vm
