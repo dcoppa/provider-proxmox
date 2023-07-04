@@ -26,7 +26,7 @@ spec:
       macaddr: 58:b9:53:85:32:a7
       model: virtio
     onboot: true
-    oncreate: true
+    vm_state: running
     osType: cloud-init
     qemuOs: other
     scsihw: virtio-scsi-pci

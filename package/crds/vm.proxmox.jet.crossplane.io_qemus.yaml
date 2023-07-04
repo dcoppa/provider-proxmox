@@ -304,9 +304,6 @@ spec:
                     description: ': a valid boot order must be specified with Network
                       type included (eg order=net0;scsi0) VM autostart on boot'
                     type: boolean
-                  oncreate:
-                    description: VM autostart on create
-                    type: boolean
                   vm_state:
                     description: The state of the VM (running or stopped)
                     type: string
@@ -814,9 +811,6 @@ spec:
                   onboot:
                     description: ': a valid boot order must be specified with Network
                       type included (eg order=net0;scsi0) VM autostart on boot'
-                    type: boolean
-                  oncreate:
-                    description: VM autostart on create
                     type: boolean
                   vm_state:
                     description: The state of the VM (running or stopped)
